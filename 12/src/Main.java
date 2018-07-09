@@ -11,6 +11,6 @@ public class Main {
        orderList1 = test.sortMap(test.getMap1());
        orderList2 = test.sortMap(test.getMap2());
        test.out("output1.txt",orderList1);
-        test.out("output2.txt",orderList2);
+       test.out("output2.txt",orderList2);
     }
 }

@@ -108,7 +108,7 @@ public class lib  {
         return orderList;
     }
 
-    public void out (String fileName,List<Map.Entry<String, Integer>> list) {
+    public void out (String fileName, List<Map.Entry<String, Integer>> list) {
         try {
             FileWriter fwriter = new FileWriter(fileName);
             int length = (list.size() < 10) ? list.size() : 10;

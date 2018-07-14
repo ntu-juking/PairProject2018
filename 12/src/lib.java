@@ -47,8 +47,8 @@ public class lib  {
     }
 
     public void dealLine(String line) {
-        Boolean isSubHavaNum = false;
         int length = line.length();
+        String Reg="[a-zA-Z]{4,}[a-zA-Z0-9]*";
 
         if(length > 0) {
             for (int i = 0; i < length; i++) {
@@ -75,17 +75,10 @@ public class lib  {
                     }
 
                     String subString = line.substring(first, end + 1);
-
-                    int lengthSub = subString.length()>4? 4:subString.length();
-                    for (int j=0 ;j<lengthSub;j++)
-                    {
-                        if(isNumber(subString.charAt(j))){
-                            isSubHavaNum = true;
-                        }
-                    }
-                    subString.toLowerCase();
-                   // System.out.println(subString);
-                    if (subString.length() > 3 && !isSubHavaNum) {
+                    boolean idWord =  subString.matches(Reg);
+                    if(idWord) {
+                        subString.toLowerCase();
+                        // System.out.println(subString);
                         if (!map2.containsKey(subString)) {
                             map2.put(subString, 1);
                         } else {
